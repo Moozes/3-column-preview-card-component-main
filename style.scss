@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+//400 font-family: 'Lexend Deca', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+//700 font-family: 'Big Shoulders Display', cursive;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+// breakpoints
+$mobile: calc(375rem / 16);
+$desktop: calc(1440rem / 16);
+
+// colors
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+$transparent-white : hsla(0, 0%, 100%, 0.75);//(paragraphs)
+$very-light-gray : hsl(0, 0%, 95%);//(background, headings, buttons)
+
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: calc(15rem / 16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 100vh;
+  background: $very-light-gray;
+  color: $transparent-white;
+  padding: 30px 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  border-radius: 10px;
+  overflow: hidden;
+  .col {
+    max-width: $desktop * 0.22;
+    padding: 40px;
+    & > * { margin-bottom: 40px; }
+    &:nth-child(1) {
+      background: $bright-orange;
+      .more-button {
+        color: $bright-orange;
+      }
+    }
+    &:nth-child(2) {
+      background: $dark-cyan;
+      .more-button {
+        color: $dark-cyan;
+      }
+    }
+    &:nth-child(3) {
+      background: $very-dark-cyan;
+      .more-button {
+        color: $very-dark-cyan;
+      }
+    }
+
+    h1.title {
+      color: $very-light-gray;
+      font-family: 'Big Shoulders Display', cursive;
+      font-size: calc(37rem / 16);
+      text-transform: uppercase;
+    }
+    p.description {
+      margin-bottom: 100px;
+      line-height: 25px;
+      @media (max-width: calc(590rem / 16)) {
+        margin-bottom: 40px;
+      }
+    }
+    .more-button {
+      background: $very-light-gray;
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 25px;
+      margin-bottom: 0;
+      border: 1px solid $very-light-gray;
+      cursor: pointer;
+      &:hover {
+        background: transparent;
+        color: $very-light-gray;
+      }
+    }
+  }
+}
+
+
+footer {
+  color: black;
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
